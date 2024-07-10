@@ -137,7 +137,7 @@ pip install dbt-sonwflake==1.7.1
 ## dbt setting
 Step 1 Have a dbt folder in the home folder
 ```bash
-mkdir -p $USERPROFILE/.dbt
+mkdir -p ~/.dbt
 ```
 Step 2 Init a project
 ```bash

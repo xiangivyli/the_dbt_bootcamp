@@ -125,7 +125,7 @@ virtualenv venv
 ```
 ```bash
 # Activate it
-source venv/Scripts/activate
+source venv/bin/activate
 ```
 
 # dbt installation

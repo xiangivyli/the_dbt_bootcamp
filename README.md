@@ -112,5 +112,14 @@ COPY INTO raw_hosts (id, name, is_superhost, created_at, updated_at)
                     FIELD_OPTIONALLY_ENCLOSED_BY = '"');
 
 ```
-
+# Python and Python virtual environment
+Python 3.12 is not compatible with dbt
+```bash
+# Create a Python virtual environment
+virtualenv venv
+```
+```bash
+# Activate it
+source venv/Scripts/activate
+```
 

@@ -127,3 +127,12 @@ source venv/Scripts/activate
 ```bash
 pip install dbt-sonwflake==1.7.1
 ```
+## dbt setting
+Step 1 Have a dbt folder in the home folder
+```bash
+mkdir -p $USERPROFILE/.dbt
+```
+Step 2 Init a project
+```bash
+dbt init dbtlearn
+```

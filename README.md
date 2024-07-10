@@ -115,6 +115,11 @@ COPY INTO raw_hosts (id, name, is_superhost, created_at, updated_at)
 # Python and Python virtual environment
 Python 3.12 is not compatible with dbt, here I installed Python 3.10.7
 ```bash
+# Install virtualenv
+pip install virtualenv
+```
+
+```bash
 # Create a Python virtual environment
 virtualenv venv
 ```

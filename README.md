@@ -1,4 +1,6 @@
 # Technology
+ - Python 3.10.13
+ - Environment: Codespaces
  - Data warehouse: Snowflake
  - Data transformation: dbt
  - BI tool: Preset
@@ -115,12 +117,17 @@ COPY INTO raw_hosts (id, name, is_superhost, created_at, updated_at)
 # Python and Python virtual environment
 Python 3.12 is not compatible with dbt, here I installed Python 3.10.7
 ```bash
+# Install virtualenv
+pip install virtualenv
+```
+
+```bash
 # Create a Python virtual environment
 virtualenv venv
 ```
 ```bash
 # Activate it
-source venv/Scripts/activate
+source venv/bin/activate
 ```
 
 # dbt installation
@@ -130,7 +137,7 @@ pip install dbt-sonwflake==1.7.1
 ## dbt setting
 Step 1 Have a dbt folder in the home folder
 ```bash
-mkdir -p $USERPROFILE/.dbt
+mkdir -p ~/.dbt
 ```
 Step 2 Init a project
 ```bash

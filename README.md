@@ -132,7 +132,7 @@ source venv/bin/activate
 
 # dbt installation
 ```bash
-pip install dbt-sonwflake==1.7.1
+pip install dbt-snowflake==1.7.1
 ```
 ## dbt setting
 Step 1 Have a dbt folder in the home folder

@@ -1,7 +1,7 @@
 # Technology
-Data warehouse: Snowflake
-Data transformation: dbt
-BI tool: Preset
+ - Data warehouse: Snowflake
+ - Data transformation: dbt
+ - BI tool: Preset
 
 # Requirements
 - Modeling changes are easy to follow and revert

@@ -1,4 +1,6 @@
 # Technology
+ - Python 3.10.13
+ - Environment: Codespaces
  - Data warehouse: Snowflake
  - Data transformation: dbt
  - BI tool: Preset

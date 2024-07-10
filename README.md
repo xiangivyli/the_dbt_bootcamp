@@ -143,3 +143,8 @@ Step 2 Init a project
 ```bash
 dbt init dbtlearn
 ```
+# Data Flow Overview
+![dataflow](./src/dataflow.png)
+
+# Materialisations Overview
+![materialisation](./src/materialisations%20overview.png)

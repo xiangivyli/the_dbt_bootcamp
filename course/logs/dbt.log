@@ -1,11 +1,11 @@
-[0m14:26:19.685455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76504acc4b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765048ffa1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765048ffa170>]}
+[0m15:14:21.775447 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a033a4b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a016d6260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a016d6200>]}
 
 
-============================== 14:26:19.691209 | 4d098e6f-7a7b-4e11-8ce5-7ee6457cada6 ==============================
-[0m14:26:19.691209 [info ] [MainThread]: Running with dbt=1.7.17
-[0m14:26:19.693139 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': '/home/codespace/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init dbtlearn', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
-[0m14:26:19.695185 [debug] [MainThread]: Starter project path: /workspaces/the_dbt_bootcamp/course/venv/lib/python3.10/site-packages/dbt/include/starter_project
-[0m14:26:19.706829 [info ] [MainThread]: 
+============================== 15:14:21.778689 | 3bc1355f-efbc-4ff3-90b6-8142725fa37c ==============================
+[0m15:14:21.778689 [info ] [MainThread]: Running with dbt=1.7.17
+[0m15:14:21.779634 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/codespace/.dbt', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt init dbtlearn', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:14:21.780836 [debug] [MainThread]: Starter project path: /workspaces/the_dbt_bootcamp/course/venv/lib/python3.10/site-packages/dbt/include/starter_project
+[0m15:14:21.785367 [info ] [MainThread]: 
 Your new dbt project "dbtlearn" was created!
 
 For more information on how to configure the profiles.yml file,
@@ -21,9 +21,9 @@ Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
 
 Happy modeling!
 
-[0m14:26:19.708950 [info ] [MainThread]: Setting up your profile.
-[0m14:30:07.569887 [info ] [MainThread]: Profile dbtlearn written to /home/codespace/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
-[0m14:30:07.572303 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 227.94273, "process_user_time": 2.599646, "process_kernel_time": 0.107819, "process_mem_max_rss": "106608", "process_in_blocks": "3344", "process_out_blocks": "80"}
-[0m14:30:07.573525 [debug] [MainThread]: Command `dbt init` succeeded at 14:30:07.573237 after 227.94 seconds
-[0m14:30:07.574268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x76504acc4b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765048ffa260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x765048ffa620>]}
-[0m14:30:07.575043 [debug] [MainThread]: Flushing usage events
+[0m15:14:21.786458 [info ] [MainThread]: Setting up your profile.
+[0m15:15:14.966013 [info ] [MainThread]: Profile dbtlearn written to /home/codespace/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m15:15:14.967775 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 53.247314, "process_user_time": 2.595344, "process_kernel_time": 0.126732, "process_mem_max_rss": "105816", "process_in_blocks": "8", "process_out_blocks": "80"}
+[0m15:15:14.968683 [debug] [MainThread]: Command `dbt init` succeeded at 15:15:14.968450 after 53.25 seconds
+[0m15:15:14.969369 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a033a4b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a016d62f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a0a016d66b0>]}
+[0m15:15:14.970276 [debug] [MainThread]: Flushing usage events

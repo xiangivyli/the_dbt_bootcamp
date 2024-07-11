@@ -150,15 +150,28 @@ dbt init dbtlearn
 ![materialisation](./src/materialisations%20overview.png)
 
 # dbt Commands
+### Check connection
 ```bash
 dbt debug
 ```
+### Compile and Execute models
 ```bash
 dbt run 
 ```
+### Select specific model
 ```bash
-dbt --full-refresh
+dbt run --select <model>
 ```
+#### For incremental models
+```bash
+dbt run --full-refresh
+```
+
+### Validate without actually execution
 ```bash
 dbt compile
+```
+### Check freshness of source, restrictions are in the sources.yml file
+```bash
+dbt source freshness
 ```

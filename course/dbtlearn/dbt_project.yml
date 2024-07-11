@@ -48,3 +48,8 @@ snapshots:
   dbtlearn:
     +pre-hook:
       - "use warehouse COMPUTE_WH"
+
+tests:
+  dbtlearn:
+    +pre-hook:
+      - "use warehouse COMPUTE_WH"

@@ -18,6 +18,7 @@
 # Snowflake Settings
 ## Features of Snowflake
 - Each worksheet has a context, that consists of Role, Warehouse, Database & Schema
+- Create user with password, then grant ROLE with its privileges to this user
 
 ## Environment Setup
 ```sql
@@ -176,7 +177,14 @@ dbt compile
 ```bash
 dbt source freshness
 ```
-### Add snapshot tables or check changes
+### Add snapshot tables or check changes, SCD type2
 ```bash
 dbt snapshot
+```
+### dbt test
+```bash
+dbt test
+```
+```bash
+dbt test --select <test>
 ```

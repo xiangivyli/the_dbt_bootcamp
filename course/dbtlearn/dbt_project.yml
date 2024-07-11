@@ -32,24 +32,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbtlearn:
     +materialized: view
-    +pre-hook:
-      - "use warehouse COMPUTE_WH"
+    snowflake_warehouse: dbt_wh
     dim:
       +materialized: table
     src:
       +materialized: ephemeral
-
-seeds:
-  dbtlearn:
-    +pre-hook:
-      - "use warehouse COMPUTE_WH"
-
-snapshots:
-  dbtlearn:
-    +pre-hook:
-      - "use warehouse COMPUTE_WH"
-
-tests:
-  dbtlearn:
-    +pre-hook:
-      - "use warehouse COMPUTE_WH"

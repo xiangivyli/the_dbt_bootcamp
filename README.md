@@ -24,31 +24,36 @@
 -- Use an admin role
 USE ROLE ACCOUNTADMIN;
 
--- Create warehouse
-CREATE WAREHOUSE IF NOT EXISTS dbt_wh with warehouse_size='x-small';
+-- Create the `transform` role
+CREATE ROLE IF NOT EXISTS transform;
+GRANT ROLE TRANSFORM TO ROLE ACCOUNTADMIN;
 
--- Create database and schemas
+-- Create the default warehouse if necessary
+CREATE WAREHOUSE IF NOT EXISTS COMPUTE_WH;
+GRANT OPERATE ON WAREHOUSE COMPUTE_WH TO ROLE TRANSFORM;
+
+-- Create the `dbt` user and assign to role
+CREATE USER IF NOT EXISTS dbt
+  PASSWORD='dbtPassword123'
+  LOGIN_NAME='dbt'
+  MUST_CHANGE_PASSWORD=FALSE
+  DEFAULT_WAREHOUSE='COMPUTE_WH'
+  DEFAULT_ROLE='transform'
+  DEFAULT_NAMESPACE='AIRBNB.RAW'
+  COMMENT='DBT user used for data transformation';
+GRANT ROLE transform to USER dbt;
+
+-- Create our database and schemas
 CREATE DATABASE IF NOT EXISTS AIRBNB;
 CREATE SCHEMA IF NOT EXISTS AIRBNB.RAW;
 
--- Create the role
-CREATE ROLE IF NOT EXISTS dbt_role;
-GRANT ROLE dbt_role TO ROLE ACCOUNTADMIN;
-
--- Create the user
-CREATE USER IF NOT EXISTS ivy
-  PASSWORD='dbtPassword123'
-  LOGIN_NAME='ivy'
-  MUST_CHANGE_PASSWORD=FALSE
-  DEFAULT_WAREHOUSE='DBT_WH'
-  DEFAULT_ROLE='dbt_role'
-  COMMENT='DBT user used for data transformation';
-
--- Grant privileges 
-GRANT ROLE dbt_role TO USER ivy;
-GRANT USAGE ON WAREHOUSE DBT_WH TO ROLE dbt_role;
-GRANT ALL ON DATABASE AIRBNB TO ROLE dbt_role;
-GRANT ALL ON ALL SCHEMAS IN DATABASE AIRBNB TO ROLE dbt_role;
+-- Set up permissions to role `transform`
+GRANT ALL ON WAREHOUSE COMPUTE_WH TO ROLE transform; 
+GRANT ALL ON DATABASE AIRBNB to ROLE transform;
+GRANT ALL ON ALL SCHEMAS IN DATABASE AIRBNB to ROLE transform;
+GRANT ALL ON FUTURE SCHEMAS IN DATABASE AIRBNB to ROLE transform;
+GRANT ALL ON ALL TABLES IN SCHEMA AIRBNB.RAW to ROLE transform;
+GRANT ALL ON FUTURE TABLES IN SCHEMA AIRBNB.RAW to ROLE transform;
 ```
 ```
 ## Import data

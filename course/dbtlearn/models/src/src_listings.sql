@@ -1,6 +1,6 @@
 -- import raw_listings
 WITH raw_listings AS (
-        SELECT * FROM AIRBNB.RAW.RAW_LISTINGS
+        SELECT * FROM {{ source('airbnb', 'listings') }}
 )
 SELECT 
    id AS listing_id,

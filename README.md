@@ -159,3 +159,6 @@ dbt run
 ```bash
 dbt --full-refresh
 ```
+```bash
+dbt compile
+```

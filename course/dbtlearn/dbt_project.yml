@@ -44,4 +44,7 @@ seeds:
     +pre-hook:
       - "use warehouse COMPUTE_WH"
 
-    
+snapshots:
+  dbtlearn:
+    +pre-hook:
+      - "use warehouse COMPUTE_WH"

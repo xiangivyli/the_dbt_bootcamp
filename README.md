@@ -175,3 +175,7 @@ dbt compile
 ```bash
 dbt source freshness
 ```
+### Add snapshot tables or check changes
+```bash
+dbt snapshot
+```

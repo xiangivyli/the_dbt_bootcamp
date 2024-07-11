@@ -185,6 +185,7 @@ dbt snapshot
 ```bash
 dbt test
 ```
+#### Test related tests with the model
 ```bash
-dbt test --select <test>
+dbt test --select <model>
 ```

@@ -148,3 +148,14 @@ dbt init dbtlearn
 
 # Materialisations Overview
 ![materialisation](./src/materialisations%20overview.png)
+
+# dbt Commands
+```bash
+dbt debug
+```
+```bash
+dbt run 
+```
+```bash
+dbt --full-refresh
+```

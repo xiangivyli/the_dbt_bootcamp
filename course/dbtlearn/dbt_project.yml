@@ -31,8 +31,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.models
 models:
   dbtlearn:
-    pre-hook:
-      - "use warehouse COMPUTE_WH"
     +materialized: view
+    +pre-hook:
+      - "use warehouse COMPUTE_WH"
     dim:
       +materialized: table
+    src:
+      +materialized: ephemeral
+
+seeds:
+  dbtlearn:
+    +pre-hook:
+      - "use warehouse COMPUTE_WH"
+
+    

@@ -189,3 +189,8 @@ dbt test
 ```bash
 dbt test --select <model>
 ```
+
+### Install Packages from dbt-Package hub
+```bash
+dbt deps
+```

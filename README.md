@@ -194,3 +194,11 @@ dbt test --select <model>
 ```bash
 dbt deps
 ```
+### Generate a json file for documentation
+```bash
+dbt docs generate
+```
+#### Check the doc from http server
+```bash
+dbt docs serve
+```

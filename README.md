@@ -5,7 +5,10 @@
  - Data transformation: dbt
  - BI tool: Preset
 
-# Requirements
+# Summary of the model
+The purpose of the project is to understand 
+
+# Requirements for the analytics engineering
 - Modeling changes are easy to follow and revert
 - Explicit dependencies between models
 - Explore dependencies between models

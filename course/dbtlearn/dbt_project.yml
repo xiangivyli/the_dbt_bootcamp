@@ -33,7 +33,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.models
 models:
   dbtlearn:
-    +pre-hook: "use warehouse COMPUTE_WH"
+    +pre-hook: 
+      - "use warehouse COMPUTE_WH"
+    +post-hook:
+      - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
     +materialized: view
     dim:
       +materialized: table

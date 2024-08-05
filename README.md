@@ -8,7 +8,11 @@
     - 4.3 [Import data](#43-import-data)
 5. [Python and Python virtual environment](#5-python-and-python-virtual-environment)
 6. [dbt Installation](#6-dbt-installation)
-7. [dbt Commands](#7-dbt-commands)
+7. [Dataflow](#7-data-flow-overview)
+8. [Materialisation](#8-materialisations-overview)
+9. [dbt Commands](#7-dbt-commands)
+10. [Analyse](#10-analyse)
+11. [Hooks](#11-prehook-and-posthook)
 
 
 # 1. Technology
@@ -167,18 +171,18 @@ Step 2 Init a project
 ```bash
 dbt init dbtlearn
 ```
-# Data Flow Overview
+# 7. Data Flow Overview
 ![dataflow](./src/dataflow.png)
 
-# Materialisations Overview
+# 8. Materialisations Overview
 ![materialisation](./src/materialisations%20overview.png)
 
-# 7. dbt Commands
-### Check connection
+# 9. dbt Commands
+### 9.1 Check connection
 ```bash
 dbt debug
 ```
-### Compile and Execute models
+### 9.2 Compile and Execute models
 ```bash
 dbt run 
 ```
@@ -191,19 +195,19 @@ dbt run --select <model>
 dbt run --full-refresh
 ```
 
-### Validate without actually execution
+### 9.3 Validate without actually execution
 ```bash
 dbt compile
 ```
-### Check freshness of source, restrictions are in the sources.yml file
+### 9.4 Check freshness of source, restrictions are in the sources.yml file
 ```bash
 dbt source freshness
 ```
-### Add snapshot tables or check changes, SCD type2
+### 9.5 Add snapshot tables or check changes, SCD type2
 ```bash
 dbt snapshot
 ```
-### dbt test
+### 9.6 dbt test
 ```bash
 dbt test
 ```
@@ -212,15 +216,32 @@ dbt test
 dbt test --select <model>
 ```
 
-### Install Packages from dbt-Package hub
+### 9.7 Install Packages from dbt-Package hub
 ```bash
 dbt deps
 ```
-### Generate a json file for documentation
+### 9.8 Generate a json file for documentation
 ```bash
 dbt docs generate
 ```
-#### Check the doc from http server
+#### 9.9 Check the doc from http server
 ```bash
 dbt docs serve
+```
+
+# 10. Analyse
+
+Add a model in the `analyses` folder to store the analyse query for analysis without materialiation.
+
+
+# 11. Prehook and posthook
+
+To set the working database and grant permission to role
+```yml
+models:
+  dbtlearn:
+    +pre-hook: 
+      - "use warehouse COMPUTE_WH"
+    +post-hook:
+      - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
 ```

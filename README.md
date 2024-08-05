@@ -1,14 +1,34 @@
-# Technology
+# Table of Contents
+1. [Technology](#1-technology)
+2. [Summary of the model](#2-summary-of-the-model)
+3. [Requirements for the analytics engineering](#3-requirements-for-the-analytics-engineering)
+4. [Snowflake Settings](#4-snowflake-settings)
+    - 4.1 [Features of Snowflake](#41-features-of-snowflake)
+    - 4.2 [Environment Setup](#42-environment-setup)
+    - 4.3 [Import data](#43-import-data)
+5. [Python and Python virtual environment](#5-python-and-python-virtual-environment)
+6. [dbt Installation](#6-dbt-installation)
+7. [dbt Commands](#7-dbt-commands)
+
+
+# 1. Technology
  - Python 3.10.13
  - Environment: Codespaces
  - Data warehouse: Snowflake
  - Data transformation: dbt
  - BI tool: Preset
 
-# Summary of the model
-The purpose of the project is to understand 
+# 2. Summary of the model
+Data Source: Airbnb data in Berlin
+Tables: hosts, listings, reviews
 
-# Requirements for the analytics engineering
+![schema](./src/schema.png)
+
+Seeds: Full moon date
+
+Purpose: Understand if the review is related to the full moon date
+
+# 3. Requirements for the analytics engineering
 - Modeling changes are easy to follow and revert
 - Explicit dependencies between models
 - Explore dependencies between models
@@ -18,12 +38,12 @@ The purpose of the project is to understand
 - Track history of dimension tables
 - Easy-to-access documentation
 
-# Snowflake Settings
-## Features of Snowflake
+# 4. Snowflake Settings
+## 4.1 Features of Snowflake
 - Each worksheet has a context, that consists of Role, Warehouse, Database & Schema
 - Create user with password, then grant ROLE with its privileges to this user
 
-## Environment Setup
+## 4.2 Environment Setup
 ```sql
 -- Use an admin role
 USE ROLE ACCOUNTADMIN;
@@ -59,8 +79,7 @@ GRANT ALL ON FUTURE SCHEMAS IN DATABASE AIRBNB to ROLE transform;
 GRANT ALL ON ALL TABLES IN SCHEMA AIRBNB.RAW to ROLE transform;
 GRANT ALL ON FUTURE TABLES IN SCHEMA AIRBNB.RAW to ROLE transform;
 ```
-```
-## Import data
+## 4.3 Import data
 ```sql
 -- Set up the defaults
 USE WAREHOUSE COMPUTE_WH;
@@ -119,7 +138,7 @@ COPY INTO raw_hosts (id, name, is_superhost, created_at, updated_at)
                     FIELD_OPTIONALLY_ENCLOSED_BY = '"');
 
 ```
-# Python and Python virtual environment
+# 5. Python and Python virtual environment
 Python 3.12 is not compatible with dbt, here I installed Python 3.10.7
 ```bash
 # Install virtualenv
@@ -135,7 +154,7 @@ virtualenv venv
 source venv/bin/activate
 ```
 
-# dbt installation
+# 6. dbt installation
 ```bash
 pip install dbt-snowflake==1.7.1
 ```
@@ -154,7 +173,7 @@ dbt init dbtlearn
 # Materialisations Overview
 ![materialisation](./src/materialisations%20overview.png)
 
-# dbt Commands
+# 7. dbt Commands
 ### Check connection
 ```bash
 dbt debug

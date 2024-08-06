@@ -14,6 +14,7 @@
 10. [Analyse](#10-analyse)
 11. [Hooks](#11-prehook-and-posthook)
 12. [Result in Snowflake](#12-result-in-snowflake)
+13. [Data Visualisation and Exposure](#)
 
 
 # 1. Technology
@@ -229,7 +230,7 @@ dbt deps
 ```bash
 dbt docs generate
 ```
-#### 9.9 Check the doc from http server
+### 9.9 Check the doc from http server
 ```bash
 dbt docs serve
 ```
@@ -257,3 +258,13 @@ You will see the populated seed file and snapshot files, and transformed data in
 Meanwhile, I added a reporter role for the next data visualisation.
 
 ![result](./src/result.png)
+
+# 13. Data Visualisation and Exposure
+
+I connected the snowflake dataset and Preset, and drawn the overview of the business
+
+![Dashboard](./src/dashboard.png)
+
+**Exposure** added a yml file in the model and can be added in the documentation.
+
+![Exposure](./src/exposure.png)

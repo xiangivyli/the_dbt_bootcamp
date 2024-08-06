@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://1ab65d08.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=dKs0C3--OxDrY-5udhlh9RCP64KuzjgOSVhRJpDmZNvbz_VjjQ2r23rl1U5akcPl
+    description: Executive Dashboard about Airbnb listings and hosts
+      
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('mart_fullmoon_reviews')
+
+    owner:
+      name: Ivy
+      email: xiangivyli@gmail.com

@@ -15,7 +15,7 @@
 11. [Hooks](#11-prehook-and-posthook)
 12. [Result in Snowflake](#12-result-in-snowflake)
 13. [Data Visualisation and Exposure](#13-data-visualisation-and-exposure)
-14. [Great Expectation](#14-great-expectation)
+14. [Great Expectations](#14-great-expectations)
 
 
 # 1. Technology
@@ -271,7 +271,7 @@ I connected the snowflake dataset and Preset, and drawn the overview of the busi
 
 ![Exposure](./src/exposure.png)
 
-# 14. Great Expectation to test
+# 14. Great Expectations 
 
 ### Step 1: Install Packages `calogica/dbt_expectations`
 

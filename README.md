@@ -13,6 +13,7 @@
 9. [dbt Commands](#7-dbt-commands)
 10. [Analyse](#10-analyse)
 11. [Hooks](#11-prehook-and-posthook)
+12. [Result in Snowflake](#12-result-in-snowflake)
 
 
 # 1. Technology
@@ -203,7 +204,11 @@ dbt compile
 ```bash
 dbt source freshness
 ```
-### 9.5 Add snapshot tables or check changes, SCD type2
+### 9.5.1 Populate seed file into snowflake
+```bash
+dbt seed
+```
+### 9.5.2 Add snapshot tables or check changes, SCD type2
 ```bash
 dbt snapshot
 ```
@@ -245,3 +250,10 @@ models:
     +post-hook:
       - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
 ```
+
+# 12. Result in Snowflake
+
+You will see the populated seed file and snapshot files, and transformed data in the snowflake
+Meanwhile, I added a reporter role for the next data visualisation.
+
+![result](./src/result.png)

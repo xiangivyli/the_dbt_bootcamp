@@ -46,10 +46,14 @@ models:
 seeds:
   dbtlearn:
     +pre-hook: "use warehouse COMPUTE_WH"
+    +post-hook:
+      - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
 
 snapshots:
   dbtlearn:
     +pre-hook: "use warehouse COMPUTE_WH"
+    +post-hook:
+      - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
 
 tests:
   dbtlearn:

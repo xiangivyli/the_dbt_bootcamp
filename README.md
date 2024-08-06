@@ -14,7 +14,8 @@
 10. [Analyse](#10-analyse)
 11. [Hooks](#11-prehook-and-posthook)
 12. [Result in Snowflake](#12-result-in-snowflake)
-13. [Data Visualisation and Exposure](#)
+13. [Data Visualisation and Exposure](#13-data-visualisation-and-exposure)
+14. [Great Expectation](#14-great-expectation)
 
 
 # 1. Technology
@@ -23,6 +24,7 @@
  - Data warehouse: Snowflake
  - Data transformation: dbt
  - BI tool: Preset
+ - Data Quality: Great Expectation
 
 # 2. Summary of the model
 Data Source: Airbnb data in Berlin
@@ -268,3 +270,12 @@ I connected the snowflake dataset and Preset, and drawn the overview of the busi
 **Exposure** added a yml file in the model and can be added in the documentation.
 
 ![Exposure](./src/exposure.png)
+
+# 14. Great Expectation to test
+
+### Step 1: Install Packages `calogica/dbt_expectations`
+
+### Step 2: Add tests in the `schema.yml`
+
+**Reference**: https://github.com/calogica/dbt-expectations
+

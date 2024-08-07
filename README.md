@@ -275,7 +275,28 @@ I connected the snowflake dataset and Preset, and drawn the overview of the busi
 
 ### Step 1: Install Packages `calogica/dbt_expectations`
 
+## Test the output
+
 ### Step 2: Add tests in the `schema.yml`
 
+### Step 3: `dbt test --select <model name>
+
+### Test the source
+
+### Step 2: Add tests in the `sources.yml`
+
+### Step 3: `dbt test --select source:airbnb.listings`
+
 **Reference**: https://github.com/calogica/dbt-expectations
+
+Popular tests:
+
+- Range of values
+- Outlier
+- Column Type
+- Discount Values keep the same 
+- Regex validates the format of the content
+
+### Step 4: `dbt --debug test --select source:airbnb.listings`
+
 

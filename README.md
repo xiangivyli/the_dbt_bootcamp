@@ -18,6 +18,7 @@
 14. [Great Expectations](#14-great-expectations)
 15. [Logging](#15-logging)
 16. [Variables](16-variables)
+17. [Orchestration](17-orchestration)
 
 
 # 1. Technology
@@ -349,5 +350,26 @@ vars:
   user_name: default_user_name_for_the_demo
 ```
 
+Understand the level of overwriting for the value : **command line > dbt_project.yml > macros**
 
 
+
+# 17. Orchestration
+
+Required packages: 
+
+- dagster-dbt
+- dagster-webserver
+
+While the `dbtlearn` is ready for the dbt project, then
+Create a project with command line: `dagster-dbt project scaffold --project-name dbt_dagster_project --dbt-project-dir=dbtlearn`
+
+And then
+```bash
+cd '/workspaces/the_dbt_bootcamp/course/dbt_dagster_project'                                                                                         
+DAGSTER_DBT_PARSE_PROJECT_ON_LOAD=1 dagster dev
+ ```
+
+ ## 17.1 The structure of the folder
+
+ ![dagster](./src/dagster.png)

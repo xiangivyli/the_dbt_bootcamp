@@ -16,6 +16,7 @@
 12. [Result in Snowflake](#12-result-in-snowflake)
 13. [Data Visualisation and Exposure](#13-data-visualisation-and-exposure)
 14. [Great Expectations](#14-great-expectations)
+15. [Logging](#15-logging)
 
 
 # 1. Technology
@@ -300,3 +301,14 @@ Popular tests:
 ### Step 4: `dbt --debug test --select source:airbnb.listings`
 
 
+# 15. Logging
+
+### Step 1: Create a macros file including `{{ log(" ") }}`
+### Step 2: Execute `dbt run-operation <macro name>`
+### Step 3: The information is in the logs/dbt.log
+
+What if push it to screen
+adding `info=True` after the `{{ log(" ") }}`
+
+What if disable log messages
+using `{# log(" ", info=True) #}`

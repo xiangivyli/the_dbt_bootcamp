@@ -19,6 +19,8 @@
 15. [Logging](#15-logging)
 16. [Variables](16-variables)
 17. [Orchestration](17-orchestration)
+      - 17.1 [Folder Structure of Dagster](#171-the-structure-of-the-folder)
+      - 17.2 [UI of Dagster](#172-ui-of-dagster)
 
 
 # 1. Technology
@@ -278,13 +280,13 @@ I connected the snowflake dataset and Preset, and drawn the overview of the busi
 
 ### Step 1: Install Packages `calogica/dbt_expectations`
 
-## Test the output
+## Option 1, Test the output
 
 ### Step 2: Add tests in the `schema.yml`
 
 ### Step 3: `dbt test --select <model name>
 
-### Test the source
+## Option 2, Test the source
 
 ### Step 2: Add tests in the `sources.yml`
 
@@ -373,3 +375,7 @@ DAGSTER_DBT_PARSE_PROJECT_ON_LOAD=1 dagster dev
  ## 17.1 The structure of the folder
 
  ![dagster](./src/dagster.png)
+
+ ## 17.2 UI of dagster
+
+ ![dagster_ui](./src/dagster_ui.png)

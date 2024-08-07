@@ -17,6 +17,7 @@
 13. [Data Visualisation and Exposure](#13-data-visualisation-and-exposure)
 14. [Great Expectations](#14-great-expectations)
 15. [Logging](#15-logging)
+16. [Variables](16-variables)
 
 
 # 1. Technology
@@ -312,3 +313,41 @@ adding `info=True` after the `{{ log(" ") }}`
 
 What if disable log messages
 using `{# log(" ", info=True) #}`
+
+# 16. Variables
+
+## Jinja Variables
+Demo
+```sql
+{% macro demo_variables() %}
+
+    {% set your_name_jinja = "Ivy" %}
+    {{ log("Hello " ~ your_name_jinja, info=True) }}
+
+{% endmacro %}
+```
+## dbt specific Variables / Project Variables
+Demo
+```sql
+{% macro demo_variables() %}
+
+    {{ log("Hello dbt user " ~ var("user_name") ~ " ^^", info=True) }}
+
+{% endmacro %}
+```
+And then add value to `user_name` in command line ` dbt run-operation demo_variables --vars '{user_name: Ivy}'`
+
+## Set Default Values
+### Option 1, setting default values in the macros
+
+`var("user_name", "No Username is set")`
+
+### Option 2, `dbt_project.yml` file
+
+```yml
+vars:
+  user_name: default_user_name_for_the_demo
+```
+
+
+

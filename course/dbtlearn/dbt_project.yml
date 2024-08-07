@@ -58,3 +58,6 @@ snapshots:
 tests:
   dbtlearn:
     +pre-hook: "use warehouse COMPUTE_WH"
+
+vars:
+  user_name: default_user_name_for_the_demo

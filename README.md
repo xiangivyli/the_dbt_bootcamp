@@ -184,7 +184,7 @@ dbt init dbtlearn
 ![dataflow](./src/dataflow.png)
 
 # 8. Materialisations Overview
-![materialisation](./src/materialisations%20overview.png)
+![materialisation](./src/materialisation.png)
 
 # 9. dbt Commands
 ### 9.1 Check connection

@@ -10,7 +10,7 @@
 6. [dbt Installation](#6-dbt-installation)
 7. [Dataflow](#7-data-flow-overview)
 8. [Materialisation](#8-materialisations-overview)
-9. [dbt Commands](#7-dbt-commands)
+9. [dbt Commands](#9-dbt-commands)
 10. [Analyse](#10-analyse)
 11. [Hooks](#11-prehook-and-posthook)
 12. [Result in Snowflake](#12-result-in-snowflake)
@@ -30,6 +30,7 @@
  - Data transformation: dbt
  - BI tool: Preset
  - Data Quality: Great Expectation
+ - Orchestration: Dagster
 
 # 2. Summary of the model
 Data Source: Airbnb data in Berlin
